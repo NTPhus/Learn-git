@@ -1,0 +1,28 @@
+git init: khởi tạo git
+git rm -r --cached <tên file>: Xóa file đã add vào staging
+git rebase -i HEAD~n: Tái cấu trúc các commit lại, giúp history nhìn clean hơn
+git push origin main: đẩy code lên remote
+git fetch origin main: get code về nhưng không làm thay đổi code hiện tại
+git pull origin main: git fetch : git merge , khi history quá xa --allow-unrelated-histories
+git add : thêm file vào staging area
+git commit -m: commit code lên local storage
+git commit --amend -m: Chỉnh sửa nội dung commit trước
+git cherry-pick: Chọn các commit sau thêm các bản sao commit vào sau HEAD
+git revert: 
+git reset:
+git merge : gộp code 2 nhánh thành một
+git tag : thêm tag vào HEAD, commit cần SemVer: M.M.P :
+"""""
+M: khi cập nhật là không tương thích phiên bản của
+m: Khi cập nhật vẫn tương thích với phiên bản cũ
+p: patch các commit fix lỗi 
+"""""
+ví dụ: V1.0.0
+
+git stash : sử dụng khi chưa muốn commit và lưu lại, sau đó sang nhánh khác làm việc như hotfix
+git convention như: 
+    git commit -m "feat: Login"
+    git commit -m "fix: Login"
+    git commit -m "refactor: Login"
+    git commit -m "doc: Login"
+
