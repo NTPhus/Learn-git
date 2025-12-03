@@ -1,4 +1,13 @@
+HEAD chính là con trỏ tham chiếu đến commit đang làm việc
+staging là vùng đệm (buffer) nằm giữa Working Directory (Cây làm việc) và Repository (Kho lưu trữ Git).
+lưu trữ các file đã chọn để commit
+sau khi commit thì code ở Repository
+
 git init: khởi tạo git
+git clone <url> clone code
+git checkout -b <ten branch>
+git checkout <ten nhanh>
+git branch
 git rm -r --cached <tên file>: Xóa file đã add vào staging
 git rebase -i HEAD~n: Tái cấu trúc các commit lại, giúp history nhìn clean hơn
 git push origin main: đẩy code lên remote
@@ -8,14 +17,14 @@ git add : thêm file vào staging area
 git commit -m: commit code lên local storage
 git commit --amend -m: Chỉnh sửa nội dung commit trước
 git cherry-pick: Chọn các commit sau thêm các bản sao commit vào sau HEAD
-git revert: 
-git reset:
+git revert <commit-hash>: undo và tạo nhánh mới, không là thay đổi history
+git reset: undo và xóa commit , thay đổi lịch sử
 git merge : gộp code 2 nhánh thành một
 git tag : thêm tag vào HEAD, commit cần SemVer: M.M.P :
 """""
-M: khi cập nhật là không tương thích phiên bản của
-m: Khi cập nhật vẫn tương thích với phiên bản cũ
-p: patch các commit fix lỗi 
+Major (chính): khi cập nhật là không tương thích phiên bản của
+minor (phụ): Khi cập nhật vẫn tương thích với phiên bản cũ
+patch (bản vá): các commit fix lỗi 
 """""
 ví dụ: V1.0.0
 
@@ -26,3 +35,30 @@ git convention như:
     git commit -m "refactor: Login"
     git commit -m "doc: Login"
 
+git stash pop
+
+git fetch origin main
+git log HEAD..origin/main
+git diff origin main
+
+git merge <branch>
+git status
+vào file conflict để fix
+git add .
+git commit -m ""
+git push origin branch
+
+lệnh xem các file thu mục ssh
+    ls -al ~/.ssh
+
+tạo SSH Keys:
+    ssh-keygen -t rsa -b 2048 -C "phu.nguyenthien@ncc.asia"
+
+sao chép khóa public key:
+    cat ~/.ssh/id_rsa.pub
+
+thêm khóa riêng tư vào agent
+    ssh-add ~/.ssh/id_rsa
+
+thêm remote url
+    git remote add origin ssh://ops.nccsoft.vn:22/DefaultCollection/NCCQuyNhon-Training/_git/git-training

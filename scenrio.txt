@@ -1,0 +1,45 @@
+1. init → add → commit → push
+    git init
+    git add .
+    git commit -m "First commit"
+    git remote add <url>
+    git branch -M main
+    git push origin main
+2. Tạo feature branch để phát triển
+    git checkout -b feature/Login
+    git add login.js
+    git commit -m "feat: implement login"
+3. Sửa commit sai bằng amend
+    git commit --amend -m "feat: implement login UX"
+    git push origin feature/login
+4. Dùng stash khi cần làm hotfix
+    git stash
+    git checkout -b hotfix/login
+    git add login.js
+    git commit -m "fix: error username"
+    git push origin hotfix/login
+5. Merge hotfix → quay lại feature
+    git checkout main 
+    git merge hotfix/login
+    git checkout feature/register
+    git stash pop
+6. fetch / pull để cập nhật
+    git pull origin main 
+7. Rebase để làm sạch lịch sử
+    git rebase i HEAD~n
+8. Giải quyết conflict
+    git status
+    chọn file conflict -> fix 
+    git add .
+    git commit -m ""
+    git push origin branch
+9. revert/reset khi muốn undo
+    git revert C2
+10. Merge feature → main
+    git checkout main
+    git merge feature/register
+    git push origin main
+11. Tag phiên bản theo SemVer
+    git tag v1.0.0
+12. Commit message theo convention
+    git commit -m "feat: Oauth"
